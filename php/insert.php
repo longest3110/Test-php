@@ -15,6 +15,13 @@
 				echo "データベースの接続に成功しました。\n";
 			}
 
+			$query = "INSERT INTO user(username, password) VALUES('Saito Hiroki', 'snow0order');";
+
+			// クエリを実行します。
+			if (mysqli_query($link, $query)) {
+				echo "INSERT に成功しました。\n";
+			}
+
 			// 接続を閉じる
 			mysqli_close($link);
 		?>
