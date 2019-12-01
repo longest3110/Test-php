@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>insert</title>
+		<title>select</title>
 	</head>
 	<body>
 		<?php 
@@ -14,7 +14,17 @@
 			} else {
 				echo "データベースの接続に成功しました。\n";
 			}
+			
+			// userテーブルの全てのデータを取得する
+			$query = "SELECT * FROM user;";
 
+			// クエリを実行
+			if ($result = mysqli_query($link, $query)) {
+				echo "SELECT に成功しました。\n";
+				foreach ($result as $row) {
+					var_dump($row);
+				}
+			}
 
 			// 接続を閉じる
 			mysqli_close($link);
