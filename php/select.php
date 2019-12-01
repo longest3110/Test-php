@@ -22,7 +22,16 @@
 			if ($result = mysqli_query($link, $query)) {
 				echo "SELECT に成功しました。\n";
 				foreach ($result as $row) {
-					var_dump($row);
+					echo "<br>";
+					echo $row["id"];
+					echo ", ";
+					echo $row["username"];
+					echo ", ";
+					echo $row["email"];
+					echo ", ";
+					echo $row["password"];
+					echo ", ";
+					echo $row["create_time"];
 				}
 			}
 
