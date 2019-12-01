@@ -6,7 +6,15 @@
 	</head>
 	<body>
 		<?php 
-			phpinfo();
+			$link = mysqli_connect('192.168.1.2', 'testsa', 'snow0order', 'TEST');
+
+			// 接続状況をチェックします
+			if (mysqli_connect_errno()) {
+				die("データベースに接続できません:" . mysqli_connect_error() . "\n");
+			} else {
+				echo "データベースの接続に成功しました。\n";
+			}
+			
 		?>
 	</body>
 </html>
