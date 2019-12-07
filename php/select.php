@@ -6,37 +6,19 @@
 	</head>
 	<body>
 		<?php 
-			$link = mysqli_connect('192.168.1.2', 'testsa', 'snow0order', 'TEST');
+			// ドライバ呼び出しを使用して MySQL データベースに接続します
+			$dsn = 'mysql:dbname=TEST;host=192.168.1.2';
+			$user = 'testsa';
+			$password = 'snow0order';
 
-			// 接続状況をチェック
-			if (mysqli_connect_errno()) {
-				die("データベースに接続できません:" . mysqli_connect_error() . "\n");
-			} else {
-				echo "データベースの接続に成功しました。\n";
-			}
-			
-			// userテーブルの全てのデータを取得する
-			$query = "SELECT * FROM user;";
-
-			// クエリを実行
-			if ($result = mysqli_query($link, $query)) {
-				echo "SELECT に成功しました。\n";
-				foreach ($result as $row) {
-					echo "<br>";
-					echo $row["id"];
-					echo ", ";
-					echo $row["username"];
-					echo ", ";
-					echo $row["email"];
-					echo ", ";
-					echo $row["password"];
-					echo ", ";
-					echo $row["create_time"];
-				}
+			try {
+				$dbh = new PDO($dsn, $user, $password);
+				echo "接続成功\n";
+			} catch (PDOException $e) {
+				echo "接続失敗: " . $e->getMessage() . "\n";
+				exit();
 			}
 
-			// 接続を閉じる
-			mysqli_close($link);
 		?>
 	</body>
 </html>
