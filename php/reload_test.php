@@ -4,9 +4,16 @@
 		<title>ReloadTest</title>
 	</head>
 	<body>
-		<div class="output"></div>
+		<div class="output">
+			<?php
+				if(isset($_POST['ReloadButton'])) {
+					echo('Hello!');
+				}
+			 ?>
+		</div>
+
 		<form method="post" action="./reload_test.php">
-			<input type="submit" value="Reload">
+			<input type="submit" name="ReloadButton" value="Reload">
 		</form>
 	</body>
 </html>
