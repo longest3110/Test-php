@@ -19,6 +19,17 @@
 				exit();
 			}
 
+			$sql = 'select * from user where id > :id';
+			$prepare = $dbh->prepare($sql);
+
+			$prepare->bindValue(':id', 3, PDO::PARAM_INT);
+
+			$prepare->execute();
+
+			$result = $prepare->fetchAll(PDO::FETCH_ASSOC);
+			var_dump($result);
+
+
 		?>
 	</body>
 </html>
