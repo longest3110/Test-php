@@ -14,13 +14,13 @@
 		// Webサーバー上にあるファイルをデバッグ
 		{
     	// デバッグ設定の名称
-    	"name": "Launch remote website with sourcemaps",
+    	"name": "chrome",
     	// デバッグ種別を指定（chrome/node/monoなど）
     	"type": "chrome",
     	// lanunchまたはattachを指定
     	"request": "launch",
     	// Webサーバー上にあるデバッグ対象のURLを指定
-    	"url": "http://localhost:8000",
+    	"url": "http://localhost/Develop/Web/Test/Test-php",
     	// マッピングするローカルファイルが配置されているディレクトリを指定
     	"webRoot": "${workspaceRoot}/",
     	// ソースマップの有効・無効の指定（true/false）
