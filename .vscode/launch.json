@@ -26,5 +26,11 @@
     	// ソースマップの有効・無効の指定（true/false）
     	"sourceMaps": true
 		}
+	],
+	"compounds": [
+		{
+			"name": "Start Debug",
+			"configurations": ["Listen for XDebug", "chrome"]
+		}
 	]
 }
